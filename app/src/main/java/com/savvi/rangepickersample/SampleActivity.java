@@ -59,7 +59,7 @@ public class SampleActivity extends AppCompatActivity {
         list.add(1);
         list.add(7);
 
-        calendar.deactivateDates(list);
+        //calendar.deactivateDates(list);
 
         Log.d("list",  calendar.getSelectedDates().toString());
 

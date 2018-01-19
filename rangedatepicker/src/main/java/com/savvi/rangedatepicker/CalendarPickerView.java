@@ -66,7 +66,7 @@ public class CalendarPickerView extends ListView {
   final List<MonthCellDescriptor> highlightedCells = new ArrayList<>();
   final List<Calendar> selectedCals = new ArrayList<>();
   final List<Calendar> highlightedCals = new ArrayList<>();
-  ArrayList<Integer> deactivatedDates ;
+  ArrayList<Integer> deactivatedDates = new ArrayList<>() ;
   private Locale locale;
   private TimeZone timeZone;
   private DateFormat monthNameFormat;
@@ -829,8 +829,7 @@ public class CalendarPickerView extends ListView {
         Date date = cal.getTime();
         boolean isCurrentMonth = cal.get(MONTH) == month.getMonth();
         boolean isSelected = isCurrentMonth && containsDate(selectedCals, cal);
-        boolean isSelectable =
-            isCurrentMonth && betweenDates(cal, minCal, maxCal) && isDateSelectable(date);
+        boolean isSelectable = isCurrentMonth && betweenDates(cal, minCal, maxCal) && isDateSelectable(date);
         boolean isToday = sameDate(cal, today);
         boolean isHighlighted = containsDate(highlightedCals, cal);
         int value = cal.get(DAY_OF_MONTH);
